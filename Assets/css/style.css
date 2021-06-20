@@ -1,18 +1,27 @@
 /* color scheme sourced from http://khroma.co/generator/ */
 
-:root {
-  --outer-space: #adfbf3;
+.root {
+  /* --outer-space: #adfbf3;
   --eraser: #5a0c4e;
   /* --eraser: #c18790; */
-  --loulou: #5a0c4e;
+  /* --loulou: #5a0c4e; */
   /* --cloud-burst: #252764; */
-  --Espresso: #5e2b1e;
-  --cloud-burst: rgb(175, 169, 169);
+  /* --Espresso: #5e2b1e;
+  --cloud-burst: rgb(175, 169, 169); */
 
-  --section-margin-top: 10px;
-  --section-margin-bottom: 10px;
-  --section-margin-left: 10px;
-  --section-margin-right: 10px;
+  --avatar-size: 8rem;
+
+  --light-blue-gray: #b7c9e2;
+  --blush-pink: #fe828c;
+  --coral-pink: #ff6163;
+  --peachy-pink: #ff9a8a;
+  --gray-green: #86a17d;
+  --light-gray-blue: #9dbcd4;
+
+  --margin-top: 10px;
+  --margin-bottom: 10px;
+  --margin-left: 10px;
+  --margin-right: 10px;
 }
 
 * {
@@ -21,7 +30,7 @@
   box-sizing: border-box;
 }
 body {
-  background-color: var(--eraser);
+  background-color: #b7dcf8;
   position: relative;
 
   /* Sans Serif font stack is implemented to help select the best font for each type of computer operating system */
@@ -31,6 +40,7 @@ body {
   /* set body font size to 1.75rem, which is 1.75x more than the font-size of 10px, making it 17.5px  */
   font-size: 1rem;
   line-height: 1;
+  z-index: -1;
 }
 
 h1,
@@ -87,8 +97,26 @@ code {
     monospace;
 }
 
+.about-info {
+  font-size: 20px;
+  margin-top: 25px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
 header {
-  position: relative;
+  position: fixed;
+  background-color: slategrey;
+  padding-top: 10px;
+  width: 100%;
+  z-index: 1;
+}
+
+footer {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: slategrey;
+  text-align: center;
 }
 
 header h1 {
@@ -100,6 +128,7 @@ header div ul {
   position: absolute;
   top: 5px;
   right: 15px;
+  padding-top: 15px;
 }
 /*styling the list items in the header*/
 header div ul li {
@@ -111,20 +140,46 @@ header div ul li {
 
 /*inserting the animation effects in list items in the header*/
 .menu-class {
-  box-shadow: inset 0 -3px 0 -1px var(--cloud-burst);
+  box-shadow: inset 0 -3px 0 -1px #ff9a8a;
   transition: box-shadow 0.15s ease-in-out;
   color: var(--eraser);
 }
 
 .menu-class:hover {
-  box-shadow: inset 0 -40px 0 -1px var(--cloud-burst);
+  box-shadow: inset 0 -40px 0 -1px #ff9a8a;
+}
+
+.card-header .avatar figure {
+  height: 9rem;
+  width: 9rem;
+}
+
+.top-section {
+  padding-top: 100px;
+}
+
+.avatar {
+  display: flex;
+}
+
+.avatar img {
+  background-color: #ccc;
+  border-radius: 80%;
+  height: 200px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: var(--avatar-size);
+  text-align: center;
+  width: var(--avatar-size); */
 }
 
 .github-class {
   margin-left: 30px;
 }
 
-.cool-subtitle {
+/* .cool-subtitle {
   position: relative;
   height: 200px;
   width: 100%;
@@ -141,7 +196,7 @@ header div ul li {
   left: 10px;
   background-color: var(--cloud-burst);
 }
-
+ */
 /*setting the main as flex.It contains 4 different classes*/
 main {
   display: flex;
@@ -154,11 +209,13 @@ main {
   flex-direction: row;
   max-width: 1400px;
   flex: 1 1 0;
-  margin-top: var(--section-margin-top);
-  margin-bottom: var(--section-margin-bottom);
-  margin-left: var(--section-margin-left);
-  margin-right: var(--section-margin-right);
-  background-color: var(--cloud-burst);
+  margin-top: 40px;
+  margin-bottom: 20px;
+
+  /* margin-top: var(--margin-top);
+  margin-bottom: var(--margin-bottom);
+  margin-left: var(--margin-left);
+  margin-right: var(--margin-right); */
 }
 
 /*styling and positioning each image in section section*/
@@ -189,6 +246,7 @@ figcaption {
   left: 20px;
   background-color: var(--cloud-burst);
   width: fit-content;
+  font-weight: bold;
 }
 
 /*styling each (2n+1)th child of the figure class*/
@@ -206,7 +264,7 @@ figure:nth-child(2n + 1) {
 .card-info-holder {
   display: flex;
   flex-direction: row;
-  border: solid 2px black;
+  /* border: solid 2px black; */
   flex: 1 1 0;
 }
 
@@ -237,5 +295,8 @@ figure:nth-child(2n + 1) {
 
   .card-info-holder {
     flex-direction: column;
+  }
+  header div ul {
+    font-size: 13px;
   }
 }
