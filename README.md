@@ -23,3 +23,7 @@ My portfolio
 # Contact me link takes you to the mailbox.
 
 # This is a responsive webpage.
+
+Find the Screenshot in:
+
+"./Assets/images/Portfolio_Screenshot.jpeg"
