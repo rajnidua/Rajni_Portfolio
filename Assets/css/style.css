@@ -1,14 +1,6 @@
 /* color scheme sourced from http://khroma.co/generator/ */
 
 .root {
-  /* --outer-space: #adfbf3;
-  --eraser: #5a0c4e;
-  /* --eraser: #c18790; */
-  /* --loulou: #5a0c4e; */
-  /* --cloud-burst: #252764; */
-  /* --Espresso: #5e2b1e;
-  --cloud-burst: rgb(175, 169, 169); */
-
   --avatar-size: 8rem;
 
   --light-blue-gray: #b7c9e2;
@@ -38,7 +30,7 @@ body {
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
   /* set body font size to 1.75rem, which is 1.75x more than the font-size of 10px, making it 17.5px  */
-  font-size: 1rem;
+  /* font-size: 1rem; */
   line-height: 1;
   z-index: -1;
 }
@@ -57,12 +49,12 @@ h6 {
 h1 {
   /* 3rem = 30px (3 * 10px) */
   font-size: 3rem;
-  color: var(--cloud-burst);
+  /* color: var(--cloud-burst); */
 }
 
 h2 {
   font-size: 2.3rem;
-  color: var(--eraser);
+  /* color: var(--eraser); */
 }
 
 h3 {
@@ -87,6 +79,7 @@ li {
 
 p {
   margin-bottom: 0.3rem;
+  font-size: 15px;
 }
 
 code {
@@ -98,10 +91,7 @@ code {
 }
 
 .about-info {
-  font-size: 20px;
-  margin-top: 25px;
-  margin-left: 15px;
-  margin-right: 15px;
+  border: 2px #86a17d;
 }
 
 header {
@@ -133,7 +123,6 @@ header div ul {
 /*styling the list items in the header*/
 header div ul li {
   display: inline-block;
-  background-color: var(--Espresso);
   padding-right: 5px;
   padding-bottom: 5px;
 }
@@ -142,7 +131,6 @@ header div ul li {
 .menu-class {
   box-shadow: inset 0 -3px 0 -1px #ff9a8a;
   transition: box-shadow 0.15s ease-in-out;
-  color: var(--eraser);
 }
 
 .menu-class:hover {
@@ -158,46 +146,30 @@ header div ul li {
   padding-top: 100px;
 }
 
-.avatar {
-  display: flex;
+.card-info-holder .about-info {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 100px;
 }
 
-.avatar img {
-  background-color: #ccc;
-  border-radius: 80%;
+.avatar .avatar-image {
+  border-radius: 50%;
   height: 200px;
   width: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* height: var(--avatar-size);
-  text-align: center;
-  width: var(--avatar-size); */
+
+  border: solid 2px #86a17d;
 }
 
 .github-class {
-  margin-left: 30px;
+  margin-left: 35px;
+  margin-top: 0%;
 }
 
-/* .cool-subtitle {
-  position: relative;
-  height: 200px;
-  width: 100%;
-  background: linear-gradient(
-    to top,
-    rgba(223, 106, 10, 0.493) 0%,
-    #862857 100%
-  );
+.github-class li {
+  line-height: 3;
 }
 
-.cool-subtitle i {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: var(--cloud-burst);
-}
- */
-/*setting the main as flex.It contains 4 different classes*/
+/*setting the main as flex.It contains 4 different sections*/
 main {
   display: flex;
   flex-direction: column;
@@ -207,22 +179,38 @@ main {
 .section-class {
   display: flex;
   flex-direction: row;
-  max-width: 1400px;
   flex: 1 1 0;
   margin-top: 40px;
   margin-bottom: 20px;
+}
 
-  /* margin-top: var(--margin-top);
-  margin-bottom: var(--margin-bottom);
-  margin-left: var(--margin-left);
-  margin-right: var(--margin-right); */
+.card-info-holder .card-header {
+  width: 200px;
+}
+
+.card-info-holder .my-work {
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+/*styling and positioning the card content class that contains all the project images and links*/
+.card-info-holder .card-content {
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+}
+
+/*card info holder contains card header and card content*/
+.card-info-holder {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 0;
 }
 
 /*styling and positioning each image in section section*/
 .card-info-holder .card-content img {
   height: 150px;
-  margin-left: 10px;
-  margin-right: 10px;
   border: 2px solid black;
 }
 
@@ -236,49 +224,27 @@ main {
 /*positioning each figure (which contains image and figure caption)*/
 figure {
   position: relative;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
 figcaption {
   position: relative;
   top: -45px;
   left: 20px;
-  background-color: var(--cloud-burst);
   width: fit-content;
   font-weight: bold;
 }
 
-/*styling each (2n+1)th child of the figure class*/
-figure:nth-child(2n + 1) > img {
-  border-left: 2px solid black;
-  width: 100%;
-}
+@media Screen and (min-width: 700px) {
+  /*styling each (2n+1)th child of the figure class*/
+  figure:nth-child(2n + 1) > img {
+    border-left: 2px solid black;
+    width: 100%;
+  }
 
-figure:nth-child(2n + 1) {
-  flex: 1 1 0;
-  min-width: 30%;
-}
-
-/*card info holder contains card header and card content*/
-.card-info-holder {
-  display: flex;
-  flex-direction: row;
-  /* border: solid 2px black; */
-  flex: 1 1 0;
-}
-
-/*styling and positioning the card content class that contains all the project images and links*/
-.card-info-holder .card-content {
-  flex-wrap: wrap;
-  display: flex;
-  flex-direction: row;
-  justify-content: stretch;
-  max-width: 1200px;
-}
-
-.card-info-holder .card-header {
-  min-width: 196px;
+  figure:nth-child(2n + 1) {
+    flex: 1 1 0;
+    min-width: 30%;
+  }
 }
 
 @media screen and (max-width: 1080px) {
@@ -288,7 +254,7 @@ figure:nth-child(2n + 1) {
 }
 
 /* On screens that are 600px or less */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 699px) {
   li {
     font-size: 1rem;
   }
@@ -296,7 +262,22 @@ figure:nth-child(2n + 1) {
   .card-info-holder {
     flex-direction: column;
   }
+
   header div ul {
-    font-size: 13px;
+    font-size: 9px;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
   }
 }
